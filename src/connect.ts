@@ -36,7 +36,6 @@ const litSignIn = async () => {
     });
     await litNodeClient.connect();
 
-    // Use LitAuthClient to handle authentication through the Lit login
     const litAuthClient = new LitAuthClient({
       litRelayConfig: {
         relayApiKey: import.meta.env.VITE_LIT_API_KEY,
@@ -44,7 +43,6 @@ const litSignIn = async () => {
       litNodeClient,
     });
 
-    //await litContractsClient.connect();
     console.log("Connected to Lit Node and Lit Auth Clients ✔️");
 
     // Initialize a GoogleProvider instance through the LitAuthClient
@@ -290,6 +288,7 @@ export const beginRecovery = async() => {
     await srm.getGuardians(jsonRpcNodeProvider, smartAccount.accountAddress)
   );
   console.log("Guardian address:", guardianSmartAccount.accountAddress);
+
   // Submit userOperation
   console.log("Trying to send userOperation");
   const sendUserOperationResponseRecovery =
@@ -311,7 +310,7 @@ export const beginRecovery = async() => {
   
 };
 
-// Can only finalize after grace period is over
+// Can only finalize after grace period is over (3 mintues)
 export const finalizeRecovery = async () => {
   const smartAccount = SafeAccount.createAccountAddressAndInitCode([
     ownerPublicAddress,

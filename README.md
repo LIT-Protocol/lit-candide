@@ -7,6 +7,7 @@ This is a simple example repository for getting started with a browser implement
 ## Environment Variables
 
 The following environment variables are required for the application to run properly:
+
 - VITE_CHAIN_ID
     - The chain ID of the network you are using. Currently, set to Sepolia (11155111).
 - VITE_BUNDLER_URL
@@ -35,7 +36,7 @@ yarn install
 yarn run dev
 ```
 
-Afterward, your terminal should inform you that the application is being displayed at `http://localhost:5173/`. After logging in with (and verifying) your Google account, 
+Afterward, your terminal should inform you that the application is being displayed at `http://localhost:5173/`. After logging in with (and verifying) your Google account, you can begin the recovery process.
 
 
 
